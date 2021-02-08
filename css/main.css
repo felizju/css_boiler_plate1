@@ -21,12 +21,16 @@ a{
 br.mo{
     display: none;
 }
-
+body{
+    height: 2000px;
+}
 /* header */
 header{
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
     height: 100px;
+    position: fixed;
+    z-index: 100;
 }
 header .inner-header{
     width: 84%;
@@ -91,4 +95,70 @@ header .inner-header .tnb li:last-child a{
 header .inner-header .tnb li:last-child a:hover{
     background: #fff;
     color: #ff8342;
+}
+
+
+/* section main */
+section.main{
+    background: url(../img/vis_4.jpg) no-repeat center/cover fixed;
+    height: 100vh;
+    position: relative;
+}
+section.main .main-title{
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    
+    /* 박스를 화면 정 중앙에 배치 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* animation */
+    animation: uprizing 1s;
+}
+@keyframes uprizing{
+    0%{
+        opacity: 0;
+        top: 60%;
+    }
+    100%{
+        top: 50%;
+        opacity: 1;
+    }
+}
+section.main .main-title h2{
+    font-size: 55px;
+    margin-top: 20px;
+}
+section.main .main-title p{
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+section.main .main-title .view{
+    display: block;
+    font-size: 15px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    width: 180px;
+    margin: 0 auto;
+    padding: 8px 0;
+    letter-spacing: 1px;
+
+    position: relative;
+    overflow: hidden;
+}
+section.main .main-title .view::after{ /* 가상요소 만들어서 겹치기 */
+    content: '';
+    width: 0%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+}
+section.main .main-title .view:hover::after{
+    width: 100%;
 }
