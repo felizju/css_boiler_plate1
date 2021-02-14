@@ -168,7 +168,7 @@ section.main .main-title .view {
     position: relative;
     overflow: hidden;
 }
-section.main .main-title .view::after {
+section.main .main-title .view::after { /* 가상요소 만들어 겹치기 */
     content: '';
     width: 0;
     height: 100%;
